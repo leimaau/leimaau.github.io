@@ -6,4 +6,5 @@ title: About
 # MIT License
 ---
 
-> **Note**: Add Markdown syntax content to file `tabs/about.md` and it will show up on this page.
+这是狸猫的博客，其实我没想过叫狸猫的，有一天发现人家这么叫我了，我挺喜欢的，索性就这么叫吧。
+
