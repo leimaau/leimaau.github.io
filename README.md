@@ -1,3 +1,0 @@
-# leimaau
-
-leimaau's blog
