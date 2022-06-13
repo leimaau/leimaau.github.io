@@ -4,9 +4,9 @@ import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 
-export default function Post({ postData }) {
+export default function Post({ postData }): JSX.Element {
   return (
-    <Layout>
+    <Layout home={undefined}>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -21,7 +21,7 @@ export default function Post({ postData }) {
   )
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<{ paths: { params: { id: string } }[]; fallback: boolean }> {
   const paths = getAllPostIds()
   return {
     paths,
@@ -29,8 +29,8 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+export async function getStaticProps({ params }): Promise<{ props: { postData: { id: any; contentHtml: string } } }> {
+  const postData = await getPostData({ id: params.id })
   return {
     props: {
       postData
